@@ -1,63 +1,20 @@
 # CAIXA DA LANCHONETE
 
-## COMO BAIXAR O CÓDIGO E SUBMETER MINHA SOLUÇÃO?
-Para completar a etapa do desafio você terá que baixar a estrutura do código aqui na Azure, resolver o desafio e entregá-lo no repositório no seu github.
+# Desafio Resolvido - Automação do Caixa da Lanchonete
 
-### BAIXANDO A ESTRUTURA
-Para baixar a estrutura no formato zip, basta clicar neste [link](https://dev.azure.com/db-tecnologia/371ab069-cd1e-4ede-8ae5-fa54dd981c56/_apis/git/repositories/a3a8fe92-b324-4d6b-abbd-1953e46fb075/items?path=/&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main&resolveLfs=true&%24format=zip&api-version=5.0&download=true).
+Este repositório contém a solução para o desafio de automação do caixa da Lanchonete da DB. O objetivo do desafio era criar uma lógica que calculasse o valor de uma compra com base no cardápio, regras de desconto e formas de pagamento da lanchonete.
 
+## Sobre o Desafio
 
-### ENTREGANDO O DESAFIO
-Após resolver o desafio e validá-lo com os testes (mais detalhes nos tópicos abaixo), você terá que criar um repositório no [Github](https://github.com/) com o nome de `desafio-$seunome-$sobrenome` (substitua os nomes com $ pelo seu próprio nome e sobrenome). Deṕos disso, você pode enviar o link do seu repositório para que possamos validá-lo para o e-mail: `start@dbserver.com.br`
+O desafio consistiu em implementar a lógica de cálculo de valor de compra para a Lanchonete da DB, considerando os itens do cardápio, descontos e acréscimos de acordo com a forma de pagamento escolhida.
 
-Se você ainda não teve contato com essas ferramentas, não tem problema, separamos um material para lhe ajudar nessa etapa: [Como usar Git e Github na prática](https://www.youtube.com/watch?v=UBAX-13g8OM).
+## Solução Proposta
 
+Neste repositório, você encontrará os arquivos que representam a solução para o desafio:
 
-## O DESAFIO
-Olá! Você foi contratado para automatizar o caixa da Lanchonete da DB.
-Sua missão será construir a lógica que calcula o valor de uma compra de acordo com o cardápio, regras e descontos da Lanchonete.
+- **src/caixa-da-lanchonete.js**: Este arquivo contém a implementação da classe `CaixaDaLanchonete`, que inclui o método `calcularValorDaCompra(formaDePagamento, itens)` para calcular o valor da compra com base nos parâmetros fornecidos.
 
-### CARDÁPIO
-
-  | codigo    | descrição                   | valor   |
-  |-----------|-----------------------------|---------|
-  | cafe      | Café                        | R$ 3,00 |
-  | chantily  | Chantily (extra do Café)    | R$ 1,50 |
-  | suco      | Suco Natural                | R$ 6,20 |
-  | sanduiche | Sanduíche                   | R$ 6,50 |
-  | queijo    | Queijo (extra do Sanduíche) | R$ 2,00 |
-  | salgado   | Salgado                     | R$ 7,25 |
-  | combo1    | 1 Suco e 1 Sanduíche        | R$ 9,50 |
-  | combo2    | 1 Café e 1 Sanduíche        | R$ 7,50 |
-
-
-### FORMAS DE PAGAMENTO
-Atualmente a Lanchonete aceita as seguintes formas de pagamento:
- - dinheiro
- - debito
- - credito
-
-O sistema deve receber essa informação como string, utilizando a grafia exatamente igual aos exemplos acima.
-
-### DESCONTOS E TAXAS
- - Pagamento em dinheiro tem 5% de desconto
- - Pagamento a crédito tem acréscimo de 3% no valor total
-
-### OUTRAS REGRAS
-
-- Caso item extra seja informado num pedido que não tenha o respectivo item principal, apresentar mensagem "Item extra não pode ser pedido sem o principal".
-- Combos não são considerados como item principal.
-- É possível pedir mais de um item extra sem precisar de mais de um principal.
-- Se não forem pedidos itens, apresentar mensagem "Não há itens no carrinho de compra!"
-- Se a quantidade de itens for zero, apresentar mensagem "Quantidade inválida!".
-- Se o código do item não existir, apresentar mensagem "Item inválido!"
-- Se a forma de pagamento não existir, apresentar mensagem "Forma de pagamento inválida!"
-
-### O CÓDIGO
-Você está recebendo uma estrutura básica para desenvolver a lógica do caixa. O arquivo principal está localizado dentro da pasta `src` e se chama `caixa-da-lanchonete.js`. Você pode desenvolver a sua lógica criando outros arquivos, métodos e até mesmo outras classes, porém o resultado deve poder ser obtido através do método `calcularValorDaCompra`.
-
-> ALERTA:
-> É importante que a estrutura básica descrita acima não seja alterada, incluindo nome e parâmetros do método. Iremos validar sua solução através destes, assim como você pode validar através dos cenários de testes já implementados em `src/caixa-da-lanchonete.test.js`.
+- **src/caixa-da-lanchonete.test.js**: Este arquivo contém cenários de teste para validar a solução. Novos casos de teste podem ser adicionados aqui para aumentar a confiabilidade da implementação.
 
 ### INSTALANDO E RODANDO NA SUA MÁQUINA
 1. Instalar o [Node](https://nodejs.org/en/)
